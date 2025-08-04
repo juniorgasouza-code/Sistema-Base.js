@@ -10,13 +10,21 @@ const prompt = require('prompt-sync')();
 
 // Array que servirá como nosso "banco de dados" em memória
 const produtos = [];
-
+const precos = [];
+const quantidade = [];
 // --- Funções a Serem Desenvolvidas ---
 
 function cadastrarProduto() {
   console.log("\n--- Funcionalidade de Cadastrar Produto ---");
   // Lógica para cadastrar um produto deve ser implementada aqui
-  console.log("Funcionalidade ainda não implementada.");
+  nomes = prompt("Qual o nome do produto\n>")
+  for(let i = 0; i < produtos.length; i++){
+      if(nomes == produtos[i]){
+        console.log("Nome Ja cadastrado")
+      }else{
+        cadastrarProduto()
+      }
+  }
 }
 
 function listarProdutos() {
