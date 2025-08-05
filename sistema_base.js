@@ -6,7 +6,7 @@
  */
 
 // Configuração para ler input do utilizador no terminal
-const prompt = require('prompt-sync')();
+const scanner = require(readline-sync)
 
 // Array que servirá como nosso "banco de dados" em memória
 const produtos = [];
