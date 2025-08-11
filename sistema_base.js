@@ -6,7 +6,7 @@
  */
 
 // Configuração para ler input do utilizador no terminal
-const entrada = require(readline-sync)
+const entrada = require("readline-sync")
 
 // Array que servirá como nosso "banco de dados" em memória
 const produtos = [];
@@ -15,7 +15,7 @@ const quantidade = [];
 // --- Funções a Serem Desenvolvidas ---
 
 function cadastrarProduto() {
-    
+
 
   }
 
