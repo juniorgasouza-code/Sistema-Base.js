@@ -11,13 +11,35 @@ const entrada = require("readline-sync")
 // Array que servirá como nosso "banco de dados" em memória
 const produtos = [];
 const precos = [];
-const quantidade = [];
+const quantidades = [];
 // --- Funções a Serem Desenvolvidas ---
 
 function cadastrarProduto() {
-
-
+  console.log("Insira o nome do produto\n>")
+  let nome = entrada.question();
+  if (produtos.contains(nome)) {
+    console.log("Produto ja cadastrado! Retornando ao cadastro...")
+    cadastrarProduto()
+  } else {
+    let preco = 0
+    do {
+      console.log("Insira o preço do produto\n>")
+      preco = entrada.questionFloat()
+      if(preco < 0){
+        console.log("Preco menor que zero!")
+      }
+    } while (preco < 0)
+    let quantidade = 0
+    do{
+      console.log("Insira a quantidade do produto\n>")
+      quantidade.questionInt()
+    }while(quantidade < 0)
+    produtos.push(nome)
+    precos.push(preco)
+    quantidades(quantidade)
   }
+
+}
 
 
 function listarProdutos() {
