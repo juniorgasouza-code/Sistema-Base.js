@@ -17,7 +17,7 @@ const quantidades = [];
 function cadastrarProduto() {
   console.log("Insira o nome do produto\n>")
   let nome = entrada.question();
-  if (produtos.contains(nome)) {
+  if (produtos.includes(nome)) {
     console.log("Produto ja cadastrado! Retornando ao cadastro...")
     cadastrarProduto()
   } else {
@@ -25,18 +25,18 @@ function cadastrarProduto() {
     do {
       console.log("Insira o preço do produto\n>")
       preco = entrada.questionFloat()
-      if(preco < 0){
+      if (preco < 0) {
         console.log("Preco menor que zero!")
       }
     } while (preco < 0)
     let quantidade = 0
-    do{
+    do {
       console.log("Insira a quantidade do produto\n>")
-      quantidade.questionInt()
-    }while(quantidade < 0)
+      quantidade = entrada.questionInt()
+    } while (quantidade < 0)
     produtos.push(nome)
     precos.push(preco)
-    quantidades(quantidade)
+    quantidades.push(quantidade)
   }
 
 }
@@ -44,8 +44,11 @@ function cadastrarProduto() {
 
 function listarProdutos() {
   console.log("\n--- Funcionalidade de Listar Produtos ---");
-  // Lógica para listar todos os produtos deve ser implementada aqui
-  console.log("Funcionalidade ainda não implementada.");
+  for (let i = 0; i < precos.length; i++) {
+    console.log("-------------------------------------------------")
+    console.log("|Nome: " + produtos[i] + "\t|Preco: " + precos[i] + "\t|Quantidade: " + quantidades[i]+ "\t|\n")
+    console.log("-------------------------------------------------")
+  }
 }
 
 function procurarProduto() {
@@ -79,25 +82,25 @@ while (loop) {
   console.log("5. Remover produto");
   console.log("6. Sair");
 
-  const opcao = prompt("Escolha uma opção: ");
+  const opcao = entrada.questionInt("Escolha uma opção: ");
 
   switch (opcao) {
-    case '1':
+    case 1:
       cadastrarProduto();
       break;
-    case '2':
+    case 2:
       listarProdutos();
       break;
-    case '3':
+    case 3:
       procurarProduto();
       break;
-    case '4':
+    case 4:
       atualizarProduto();
       break;
-    case '5':
+    case 5:
       removerProduto();
       break;
-    case '6':
+    case 6:
       console.log("A sair do sistema. Até logo!");
       loop = false;
       break;
