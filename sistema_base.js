@@ -15,17 +15,9 @@ const quantidade = [];
 // --- Funções a Serem Desenvolvidas ---
 
 function cadastrarProduto() {
-  console.log("\n--- Funcionalidade de Cadastrar Produto ---");
-  // Lógica para cadastrar um produto deve ser implementada aqui
-  nomes = prompt("Qual o nome do produto\n>")
-  for(let i = 0; i < produtos.length; i++){
-      if(nomes === produtos[i]){
-        console.log("Nome Ja cadastrado")
-      }else{
-        cadastrarProduto()
-      }
+
   }
-}
+
 
 function listarProdutos() {
   console.log("\n--- Funcionalidade de Listar Produtos ---");
