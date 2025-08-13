@@ -65,7 +65,7 @@ function procurarProduto() {
         console.log("|Nome: " + produtos[indice] + "\t|Preco: " + precos[indice] + "\t|Quantidade: " + quantidades[indice] + "\t|\n")
         console.log("-------------------------------------------------")
     }
-}
+  }
 
 function atualizarProduto() {
   console.log("\n--- Funcionalidade de Atualizar Produto ---");
