@@ -53,7 +53,6 @@ function listarProdutos() {
 
 function procurarProduto() {
   console.log("\n--- Funcionalidade de Procurar Produto ---");
-  console.log("\n--- Funcionalidade de Procurar Produto ---");
     console.log("Insira o nome do produto\n>")
     let nome = entrada.question()
     if (!produtos.includes(nome)) {
@@ -69,9 +68,36 @@ function procurarProduto() {
 
 function atualizarProduto() {
   console.log("\n--- Funcionalidade de Atualizar Produto ---");
-  // Lógica para atualizar um produto deve ser implementada aqui
-  console.log("Funcionalidade ainda não implementada.");
+  console.log("\n--- Funcionalidade de Atualizar Produto ---");
+    console.log("Insira o nome do produto\n>")
+    let nome = entrada.question()
+    if (!produtos.includes(nome)) {
+        console.log("Produto não encontrado! retornando ao menu...")
+        return
+    } else {
+        let indice = produtos.indexOf(nome)
+        let novo_preco = 0
+        do {
+            console.log("Insira o novo preço\n>")
+            novo_preco = entrada.questionInt()
+            if(novo_preco < 0){
+                console.log("Preço invalido! Tente novamente...")
+            }
+        } while (novo_preco < 0)
+        let nova_quantidade = 0
+        do {
+            console.log("Insira a nova quantidade\n>")
+            nova_quantidade = entrada.questionInt()
+            if(nova_quantidade < 0){
+                console.log("Quantidade invalida! Tente novamente...")
+            }
+        }while(nova_quantidade < 0)
+        precos[indice] = novo_preco
+        quantidades[indice] = nova_quantidade
+        console.log("Produto atualizado com sucesso!")
+    }
 }
+
 
 function removerProduto() {
   console.log("\n--- Funcionalidade de Remover Produto ---");
