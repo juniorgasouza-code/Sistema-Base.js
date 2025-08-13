@@ -53,8 +53,18 @@ function listarProdutos() {
 
 function procurarProduto() {
   console.log("\n--- Funcionalidade de Procurar Produto ---");
-  // Lógica para procurar um produto pelo nome deve ser implementada aqui
-  console.log("Funcionalidade ainda não implementada.");
+  console.log("\n--- Funcionalidade de Procurar Produto ---");
+    console.log("Insira o nome do produto\n>")
+    let nome = entrada.question()
+    if (!produtos.includes(nome)) {
+        console.log("Produto não encontrado! retornando ao menu...")
+        return
+    } else {
+        let indice = produtos.indexOf(nome)
+        console.log("-------------------------------------------------")
+        console.log("|Nome: " + produtos[indice] + "\t|Preco: " + precos[indice] + "\t|Quantidade: " + quantidades[indice] + "\t|\n")
+        console.log("-------------------------------------------------")
+    }
 }
 
 function atualizarProduto() {
